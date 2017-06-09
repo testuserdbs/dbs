@@ -1,8 +1,7 @@
 from bs4 import BeautifulSoup #hilf daten aus einer html datei zu entnehmen 
 import requests 
 import csv
-
-
+from collections import Counter
 
 file= open('/home/celvic/DBS/codes/testfile.csv', 'w') #dokument oeffnen im writer format
 writer= csv.writer(file, delimiter= ';' )
@@ -22,5 +21,6 @@ for c in content:
 print (txt)
     
 file.close()
+count= Counter(txt)
+print(count.most_common(3))
 
-    
